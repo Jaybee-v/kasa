@@ -7,12 +7,8 @@ import HousingTitleSection from "../components/Housing/HousingTitleSection"
 import HousingDescription from "../components/Housing/HousingDescription"
 import HousingEquipments from "../components/Housing/HousingEquipments"
 import styled from "styled-components"
-import {
-    FaArrowDown,
-    FaArrowUp,
-    FaChevronDown,
-    FaChevronUp,
-} from "react-icons/fa"
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"
+import KasaFooter from "../components/Shared/KasaFooter"
 
 const visible = {
     display: "block",
@@ -23,14 +19,22 @@ const hidden = {
 }
 
 const ToggleBar = styled.div`
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    background: red;
-    width: 335px;
+    background: #ff6060;
+    width: 90vw;
     margin-bottom: 20px;
+    border-radius: 5px;
+    max-height: 30px;
+`
+
+const ItemsContainer = styled.div`
+    width: 90vw;
+    margin: auto;
 `
 
 export default function Housing() {
@@ -85,9 +89,9 @@ export default function Housing() {
                     </span>
                 )}
             </ToggleBar>
-            <div style={seeDescription ? visible : hidden}>
+            <ItemsContainer style={seeDescription ? visible : hidden}>
                 <HousingDescription description={description} />
-            </div>
+            </ItemsContainer>
             <ToggleBar
                 onClick={() =>
                     seeEquipments
@@ -95,11 +99,21 @@ export default function Housing() {
                         : setSeeEquipments(true)
                 }
             >
-                Equipements
+                <p style={{ paddingLeft: "20px" }}>Equipements</p>
+                {seeEquipments ? (
+                    <span style={{ paddingRight: "10px" }}>
+                        <FaChevronUp />
+                    </span>
+                ) : (
+                    <span style={{ paddingRight: "10px" }}>
+                        <FaChevronDown />
+                    </span>
+                )}
             </ToggleBar>
-            <div style={seeEquipments ? visible : hidden}>
+            <ItemsContainer style={seeEquipments ? visible : hidden}>
                 <HousingEquipments equipments={equipments} />
-            </div>
+            </ItemsContainer>
+            <KasaFooter />
         </div>
     )
 }

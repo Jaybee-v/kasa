@@ -1,12 +1,11 @@
-import { Link } from "react-router-dom"
 import styled from "styled-components"
 import { useNavigate } from "react-router-dom"
 
 const Logo = () => {
     return (
         <svg
-            width="120"
-            height="47"
+            width="150"
+            height="55"
             viewBox="0 0 145 47"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -36,7 +35,7 @@ const Logo = () => {
 }
 
 const Header = styled.header`
-    padding-top: 10px;
+    padding-top: 17px;
     margin: auto;
     max-width: 90vw;
     display: flex;
@@ -50,11 +49,14 @@ const List = styled.ul`
 `
 
 const ListItem = styled.li`
-    color: red;
+    color: #ff6060;
     font-weight: 300;
-    margin-right: 10px;
     text-transform: uppercase;
     font-size: 12px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 `
 
 export default function KasaHeader() {
@@ -64,7 +66,12 @@ export default function KasaHeader() {
         <Header>
             <Logo />
             <List>
-                <ListItem onClick={() => navigate("/")}>Accueil</ListItem>
+                <ListItem
+                    style={{ marginRight: "10px" }}
+                    onClick={() => navigate("/")}
+                >
+                    Accueil
+                </ListItem>
                 <ListItem onClick={() => navigate("/about")}>A Propos</ListItem>
             </List>
         </Header>

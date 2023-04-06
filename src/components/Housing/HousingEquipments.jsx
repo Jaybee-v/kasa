@@ -1,10 +1,15 @@
 import React from "react"
+import styled from "styled-components"
 
+const Item = styled.li`
+    list-style: none;
+    color: #ff6060;
+`
 export default function HousingEquipments({ equipments }) {
     return (
         <ul>
             {equipments.map((equipment) => (
-                <li>{equipment}</li>
+                <Item>{equipment}</Item>
             ))}
         </ul>
     )

@@ -6,10 +6,14 @@ export default function ImageSlider({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const Container = styled.div`
-        width: 335px;
+        width: 100%;
+        min-width: 90vw;
+        max-width: 90vw;
         height: 255px;
         position: relative;
-        margin: auto;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 25px;
         display: flex;
         justify-content: center;
         border-radius: 10px;
@@ -18,7 +22,7 @@ export default function ImageSlider({ slides }) {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
-        left: 25px;
+        left: 15px;
         font-size: 25px;
         color: #fff;
         z-index: 1;
@@ -29,7 +33,7 @@ export default function ImageSlider({ slides }) {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
-        right: 25px;
+        right: 15px;
         font-size: 25px;
         color: #fff;
         z-index: 1;
