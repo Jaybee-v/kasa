@@ -6,8 +6,10 @@ export default function ImageSlider({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const Container = styled.div`
+        width: 335px;
+        height: 255px;
         position: relative;
-        height: 100%;
+        margin: auto;
         display: flex;
         justify-content: center;
         border-radius: 10px;
@@ -35,7 +37,9 @@ export default function ImageSlider({ slides }) {
     `
 
     const Image = styled.img`
-        max-width: 90vw;
+        width: 335px;
+        height: 255px;
+        object-fit: cover;
         border-radius: 10px;
     `
 
@@ -54,13 +58,17 @@ export default function ImageSlider({ slides }) {
 
     return (
         <Container>
-            <LeftArrow onClick={goToPrevious}>
-                <FaChevronLeft />
-            </LeftArrow>
+            {slides.length > 1 ? (
+                <>
+                    <LeftArrow onClick={goToPrevious}>
+                        <FaChevronLeft />
+                    </LeftArrow>
+                    <RightArrow onClick={goToNext}>
+                        <FaChevronRight />
+                    </RightArrow>
+                </>
+            ) : null}
             <Image src={slides[currentIndex]} alt="/" />
-            <RightArrow onClick={goToNext}>
-                <FaChevronRight />
-            </RightArrow>
         </Container>
     )
 }
