@@ -42,6 +42,7 @@ const ToggleBar = styled.div`
     border-radius: 5px;
     max-height: 30px;
     @media only screen and (min-width: 1240px) {
+        max-height: 40px;
         max-width: 580px;
         width: 100%;
     }

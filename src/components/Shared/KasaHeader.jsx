@@ -35,7 +35,6 @@ const Logo = () => {
 }
 const active = {
     textDecoration: "underline",
-    marginRight: "20px",
 }
 
 const Header = styled.header`
@@ -62,9 +61,19 @@ const ListItem = styled.li`
     text-transform: uppercase;
     font-size: 12px;
     cursor: pointer;
+    &:first-child {
+        margin-right: 20px;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
     @media only screen and (min-width: 1240px) {
         text-transform: capitalize;
-        font-size: 17px;
+        font-size: 20px;
+        font-weight: 600;
+        &:first-child {
+            margin-right: 60px;
+        }
     }
 `
 
@@ -77,13 +86,13 @@ export default function KasaHeader() {
             <Logo />
             <List>
                 <ListItem
-                    style={url === "/" ? active : { marginRight: "20px" }}
+                    style={url === "/" ? active : null}
                     onClick={() => navigate("/")}
                 >
                     Accueil
                 </ListItem>
                 <ListItem
-                    style={url === "/about" ? active : { marginRight: "20px" }}
+                    style={url === "/about" ? active : null}
                     onClick={() => navigate("/about")}
                 >
                     A Propos

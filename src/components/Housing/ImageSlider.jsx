@@ -10,7 +10,7 @@ const Container = styled.div`
     position: relative;
     margin-right: auto;
     margin-left: auto;
-    margin-top: 25px;
+    margin-top: 40px;
     display: flex;
     justify-content: center;
     border-radius: 10px;

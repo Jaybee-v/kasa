@@ -57,12 +57,11 @@ const BlurDiv = styled.div`
     bottom: 0;
     width: 100%;
     height: 60px;
-    opacity: 0.8;
     background: rgb(0, 0, 0);
     background: linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(255, 96, 96, 1) 100%
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(255, 96, 96, 0.7) 100%
     );
     max-width: 90vw;
     border-radius: 0 0 10px 10px;
