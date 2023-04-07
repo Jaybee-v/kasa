@@ -17,7 +17,8 @@ const Container = styled.div`
     margin-left: auto;
     min-height: 67vh;
     max-height: fit-content;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     /* @media only screen and (min-width: 1200px) {

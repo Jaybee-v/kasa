@@ -58,12 +58,13 @@ const List = styled.ul`
 
 const ListItem = styled.li`
     color: #ff6060;
-    font-weight: 300;
+    font-weight: 400;
     text-transform: uppercase;
     font-size: 12px;
     cursor: pointer;
-    &:hover {
-        text-decoration: underline;
+    @media only screen and (min-width: 1240px) {
+        text-transform: capitalize;
+        font-size: 17px;
     }
 `
 

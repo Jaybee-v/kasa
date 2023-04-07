@@ -11,7 +11,7 @@ const hidden = {
 }
 
 const Container = styled.div`
-    margin-top: 55px;
+    margin-top: 85px;
 `
 const ToggleBar = styled.div`
     color: #fff;
