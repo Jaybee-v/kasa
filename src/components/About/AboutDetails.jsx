@@ -25,7 +25,7 @@ const ToggleBar = styled.div`
     margin-bottom: 25px;
     border-radius: 5px;
     max-height: 30px;
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1240px) {
         max-width: 1040px;
     }
 `
@@ -33,11 +33,15 @@ const ToggleBar = styled.div`
 const TextContainer = styled.div`
     width: fit-content;
     color: #ff6060;
-    padding: 0 35px 35px 35px;
+    padding: 0 35px 55px 35px;
     margin: auto;
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 768px) {
+        padding: 0 35px 85px 35px;
+        max-width: 75%;
+    }
+    @media only screen and (min-width: 1240px) {
         max-width: 900px;
-        height: 50px;
+        height: 0px;
     }
 `
 

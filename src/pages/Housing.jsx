@@ -17,6 +17,17 @@ const visible = {
 const hidden = {
     display: "none",
 }
+const ToggleContainer = styled.div`
+    max-width: 1240px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    @media only screen and (min-width: 1240px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+`
 
 const ToggleBar = styled.div`
     color: #fff;
@@ -30,14 +41,19 @@ const ToggleBar = styled.div`
     margin-bottom: 20px;
     border-radius: 5px;
     max-height: 30px;
-    @media only screen and (min-width: 1200px) {
+    @media only screen and (min-width: 1240px) {
         max-width: 580px;
         width: 100%;
     }
 `
 
+const Div = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
 const ItemsContainer = styled.div`
-    width: 90vw;
+    width: 580px;
     margin: auto;
 `
 
@@ -71,53 +87,59 @@ export default function Housing() {
     }, [id])
 
     return (
-        <div>
+        <>
             <KasaHeader />
             <ImageSlider slides={pictures} />
             <HousingTitleSection house={house} tags={tags} host={host} />
-            <ToggleBar
-                onClick={() =>
-                    seeDescription
-                        ? setSeeDescription(false)
-                        : setSeeDescription(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Description</p>
-                {seeDescription ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <ItemsContainer style={seeDescription ? visible : hidden}>
-                <HousingDescription description={description} />
-            </ItemsContainer>
-            <ToggleBar
-                onClick={() =>
-                    seeEquipments
-                        ? setSeeEquipments(false)
-                        : setSeeEquipments(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Equipements</p>
-                {seeEquipments ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <ItemsContainer style={seeEquipments ? visible : hidden}>
-                <HousingEquipments equipments={equipments} />
-            </ItemsContainer>
+            <ToggleContainer>
+                <Div>
+                    <ToggleBar
+                        onClick={() =>
+                            seeDescription
+                                ? setSeeDescription(false)
+                                : setSeeDescription(true)
+                        }
+                    >
+                        <p style={{ paddingLeft: "20px" }}>Description</p>
+                        {seeDescription ? (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronUp />
+                            </span>
+                        ) : (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronDown />
+                            </span>
+                        )}
+                    </ToggleBar>
+                    <ItemsContainer style={seeDescription ? visible : hidden}>
+                        <HousingDescription description={description} />
+                    </ItemsContainer>
+                </Div>
+                <Div>
+                    <ToggleBar
+                        onClick={() =>
+                            seeEquipments
+                                ? setSeeEquipments(false)
+                                : setSeeEquipments(true)
+                        }
+                    >
+                        <p style={{ paddingLeft: "20px" }}>Equipements</p>
+                        {seeEquipments ? (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronUp />
+                            </span>
+                        ) : (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronDown />
+                            </span>
+                        )}
+                    </ToggleBar>
+                    <ItemsContainer style={seeEquipments ? visible : hidden}>
+                        <HousingEquipments equipments={equipments} />
+                    </ItemsContainer>
+                </Div>
+            </ToggleContainer>
             <KasaFooter />
-        </div>
+        </>
     )
 }

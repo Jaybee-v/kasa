@@ -33,14 +33,22 @@ const Logo = () => {
         </svg>
     )
 }
+const active = {
+    textDecoration: "underline",
+    marginRight: "20px",
+}
 
 const Header = styled.header`
     padding-top: 17px;
     margin: auto;
     max-width: 90vw;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media only screen and (min-width: 1240px) {
+        max-width: 1240px;
+    }
 `
 
 const List = styled.ul`
@@ -61,18 +69,24 @@ const ListItem = styled.li`
 
 export default function KasaHeader() {
     let navigate = useNavigate()
+    const url = window.location.pathname
 
     return (
         <Header>
             <Logo />
             <List>
                 <ListItem
-                    style={{ marginRight: "10px" }}
+                    style={url === "/" ? active : { marginRight: "20px" }}
                     onClick={() => navigate("/")}
                 >
                     Accueil
                 </ListItem>
-                <ListItem onClick={() => navigate("/about")}>A Propos</ListItem>
+                <ListItem
+                    style={url === "/about" ? active : { marginRight: "20px" }}
+                    onClick={() => navigate("/about")}
+                >
+                    A Propos
+                </ListItem>
             </List>
         </Header>
     )

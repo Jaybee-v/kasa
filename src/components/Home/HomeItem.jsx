@@ -19,8 +19,8 @@ const Container = styled.div`
     }
 `
 const Image = styled.img`
-    max-width: 335px;
-    min-width: 335px;
+    max-width: 90vw;
+    min-width: 90vw;
     object-fit: cover;
     width: 100%;
     height: 230px;

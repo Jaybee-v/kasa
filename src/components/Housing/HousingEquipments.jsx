@@ -9,7 +9,7 @@ export default function HousingEquipments({ equipments }) {
     return (
         <ul>
             {equipments.map((equipment) => (
-                <Item>{equipment}</Item>
+                <Item key={equipment}>{equipment}</Item>
             ))}
         </ul>
     )

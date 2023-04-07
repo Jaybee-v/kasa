@@ -19,8 +19,11 @@ const StyledGlobalStyle = createGlobalStyle`
     }
     @media only screen and (min-width: 1240px) {
         body{
-            max-width: 1240px;
+            /* max-width: 1240px; */
             margin: auto;
+        }
+        footer{
+            max-width: 100%;
         }
     }
 

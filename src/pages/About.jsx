@@ -13,14 +13,16 @@ const PageContainer = styled.div`
 `
 
 const Container = styled.div`
+    margin-right: auto;
+    margin-left: auto;
     min-height: 67vh;
     max-height: fit-content;
     margin-bottom: 30px;
     display: flex;
     flex-direction: column;
-    @media only screen and (min-width: 1200px) {
+    /* @media only screen and (min-width: 1200px) {
         max-width: 1240px;
-    }
+    } */
 `
 
 export default function About() {
