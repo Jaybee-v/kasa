@@ -6,7 +6,11 @@ export default function HousingTitleSection({ house, tags, host }) {
     const Container = styled.div`
         max-width: 90vw;
         margin: auto;
-        color: #ff6060; ;
+        color: #ff6060;
+        @media only screen and (min-width: 1200px) {
+            max-width: 900px;
+            width: 100%;
+        }
     `
     const TagsContainer = styled.div`
         display: grid;
@@ -27,6 +31,11 @@ export default function HousingTitleSection({ house, tags, host }) {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @media only screen and (min-width: 1200px) {
+            flex-direction: column-reverse;
+            justify-content: end;
+            align-items: end;
+        }
     `
     const HostDiv = styled.div`
         display: flex;

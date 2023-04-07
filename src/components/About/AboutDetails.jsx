@@ -9,6 +9,10 @@ const visible = {
 const hidden = {
     display: "none",
 }
+
+const Container = styled.div`
+    margin-top: 55px;
+`
 const ToggleBar = styled.div`
     color: #fff;
     display: flex;
@@ -21,6 +25,9 @@ const ToggleBar = styled.div`
     margin-bottom: 25px;
     border-radius: 5px;
     max-height: 30px;
+    @media only screen and (min-width: 1200px) {
+        max-width: 1040px;
+    }
 `
 
 const TextContainer = styled.div`
@@ -28,6 +35,10 @@ const TextContainer = styled.div`
     color: #ff6060;
     padding: 0 35px 35px 35px;
     margin: auto;
+    @media only screen and (min-width: 1200px) {
+        max-width: 900px;
+        height: 50px;
+    }
 `
 
 export default function AboutDetails() {
@@ -36,7 +47,7 @@ export default function AboutDetails() {
     const [seeService, setSeeService] = useState(false)
     const [seeSecurity, setSeeSecurity] = useState(false)
     return (
-        <div style={{ marginTop: "25px" }}>
+        <Container>
             <ToggleBar
                 onClick={() =>
                     seeFiability
@@ -127,6 +138,6 @@ export default function AboutDetails() {
                 également des ateliers sur la sécurité domestique pour nos
                 hôtes.
             </TextContainer>
-        </div>
+        </Container>
     )
 }

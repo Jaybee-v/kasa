@@ -17,6 +17,10 @@ export default function ImageSlider({ slides }) {
         display: flex;
         justify-content: center;
         border-radius: 10px;
+        /* @media only screen and (min-width: 1200px) {
+            max-width: 900px;
+            width: 100%;
+        } */
     `
     const LeftArrow = styled.div`
         position: absolute;
@@ -45,6 +49,10 @@ export default function ImageSlider({ slides }) {
         height: 255px;
         object-fit: cover;
         border-radius: 10px;
+        @media only screen and (min-width: 1240px) {
+            width: 1240px;
+            height: 415px;
+        }
     `
 
     const goToPrevious = () => {

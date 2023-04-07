@@ -31,6 +31,9 @@ const Image = styled.img`
         max-width: 340px;
         max-height: 340px;
     }
+    @media only screen and (min-width: 768px) {
+        width: 340px;
+    }
 `
 
 const TextContainer = styled.div`

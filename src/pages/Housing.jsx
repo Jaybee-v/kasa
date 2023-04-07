@@ -30,6 +30,10 @@ const ToggleBar = styled.div`
     margin-bottom: 20px;
     border-radius: 5px;
     max-height: 30px;
+    @media only screen and (min-width: 1200px) {
+        max-width: 580px;
+        width: 100%;
+    }
 `
 
 const ItemsContainer = styled.div`

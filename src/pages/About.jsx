@@ -5,28 +5,35 @@ import ImageAbout from "../components/About/AboutImage"
 import KasaFooter from "../components/Shared/KasaFooter"
 import styled from "styled-components"
 
+const PageContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+`
+
 const Container = styled.div`
     min-height: 67vh;
     max-height: fit-content;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: 1200px) {
+        max-width: 1240px;
+    }
 `
 
 export default function About() {
     return (
-        <div
-            style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                height: "100%",
-            }}
-        >
+        <>
             <KasaHeader />
-            <Container>
-                <ImageAbout />
-                <AboutDetails />
-            </Container>
-            <KasaFooter />
-        </div>
+            <PageContainer>
+                <Container>
+                    <ImageAbout />
+                    <AboutDetails />
+                </Container>
+                <KasaFooter />
+            </PageContainer>
+        </>
     )
 }
