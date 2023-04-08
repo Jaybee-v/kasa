@@ -41,6 +41,7 @@ const ToggleBar = styled.div`
     margin-bottom: 20px;
     border-radius: 5px;
     max-height: 30px;
+    cursor: pointer;
     @media only screen and (min-width: 1240px) {
         max-height: 40px;
         max-width: 580px;
@@ -54,7 +55,7 @@ const Div = styled.div`
 `
 
 const ItemsContainer = styled.div`
-    width: 580px;
+    width: 90%;
     margin: auto;
 `
 
@@ -67,7 +68,7 @@ export default function Housing() {
     const [host, setHost] = useState([])
     const [description, setDescription] = useState("")
     const [equipments, setEquipments] = useState([])
-    const [searchParams, setSearchParams] = useSearchParams()
+    const [searchParams] = useSearchParams()
     const id = searchParams.get("id")
     console.log(id)
 

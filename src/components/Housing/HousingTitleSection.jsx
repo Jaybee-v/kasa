@@ -26,6 +26,9 @@ const TagsContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    @media only screen and (min-width: 768px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
     @media only screen and (min-width: 1240px) {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -34,10 +37,11 @@ const Tag = styled.div`
     display: flex;
     justify-content: center;
     background: #ff6060;
-    padding: 5px 20px;
-    font-size: 10px;
-    letter-spacing: 1px;
+    padding: 5px 10px;
+    font-size: 9px;
+    /* letter-spacing: 1px; */
     color: #fff;
+    min-width: fit-content;
     border-radius: 8px;
     @media only screen and (min-width: 1240px) {
         padding: 4px 5px;

@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom"
 const Logo = () => {
     return (
         <svg
-            width="150"
-            height="55"
+            width="145"
+            height="47"
             viewBox="0 0 145 47"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -53,11 +53,13 @@ const Header = styled.header`
 const List = styled.ul`
     display: flex;
     list-style: none;
+    width: 60vw;
+    justify-content: end;
 `
 
 const ListItem = styled.li`
     color: #ff6060;
-    font-weight: 400;
+    font-weight: 600;
     text-transform: uppercase;
     font-size: 12px;
     cursor: pointer;

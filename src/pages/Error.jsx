@@ -12,7 +12,7 @@ const Container = styled.div`
     margin-left: auto;
     align-items: center;
     color: #ff6060;
-    height: 70vh;
+    height: 75vh;
 `
 
 const Center = styled.div`
@@ -58,7 +58,10 @@ export default function Error() {
                 <Center>
                     <StatusError>404</StatusError>
                     <Text>Oups! La page que vous demandez n'existe pas.</Text>
-                    <p onClick={() => navigate("/")}>
+                    <p
+                        style={{ margin: "auto", cursor: "pointer" }}
+                        onClick={() => navigate("/")}
+                    >
                         Retournez sur la page d'accueil
                     </p>
                 </Center>
