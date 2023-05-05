@@ -39,7 +39,6 @@ const Tag = styled.div`
     background: #ff6060;
     padding: 5px 10px;
     font-size: 9px;
-    /* letter-spacing: 1px; */
     color: #fff;
     min-width: fit-content;
     border-radius: 8px;

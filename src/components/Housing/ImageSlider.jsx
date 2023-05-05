@@ -63,13 +63,14 @@ const Image = styled.img`
 
 export default function ImageSlider({ slides }) {
     const [currentIndex, setCurrentIndex] = useState(0)
-
+    // aller sur la photo précedente
     const goToPrevious = () => {
         const isFirstIndex = currentIndex === 0
         const newIndex = isFirstIndex ? slides.length - 1 : currentIndex - 1
 
         setCurrentIndex(newIndex)
     }
+    // aller à la photo suivante
     const goToNext = () => {
         const isLastIndex = currentIndex === slides.length - 1
         const newIndex = isLastIndex ? 0 : currentIndex + 1

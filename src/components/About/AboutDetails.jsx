@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { FaChevronDown, FaChevronUp } from "react-icons/fa"
 import styled from "styled-components"
 
+// Mise en place du style avec styled-components
 const visible = {
     display: "block",
 }

@@ -21,9 +21,6 @@ const Container = styled.div`
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    /* @media only screen and (min-width: 1200px) {
-        max-width: 1240px;
-    } */
 `
 
 export default function About() {
