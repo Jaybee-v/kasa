@@ -76,6 +76,7 @@ const Image = styled.img`
 `
 
 export default function HousingTitleSection({ house, tags, host }) {
+    // section informations sur le logement
     return (
         <Container>
             <TitleDiv>

@@ -70,6 +70,7 @@ export default function HomeItem({ item }) {
     let navigate = useNavigate()
 
     return (
+        // container de l'image d'un logement
         <Container onClick={() => navigate(`/housing?id=${item.id}`)}>
             <Image src={item.cover} alt={item.title} />
             <TextContainer>

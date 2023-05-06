@@ -46,104 +46,60 @@ const TextContainer = styled.div`
         height: 0px;
     }
 `
+// Titre et contenu des collapses
+const aboutContent = [
+    {
+        title: "Fiabilité",
+        content:
+            "Les annonces postées sur Kasa garantissent une fiabilité totale. Les photos sont conformes aux logements, et toutes les informations sont régulièrement vérifiées par nos équipes.",
+    },
+    {
+        title: "Respect",
+        content:
+            "  La bienveillance fait partie des valeurs fondatrices de Kasa. Tout comportement discriminatoire ou de perturbation du voisinage entraînera une exclusion de notre plateforme.",
+    },
+    {
+        title: "Service",
+        content:
+            "Nos équipes se tiennent à votre disposition pour vous fournir une expérience parfaite. N'hésitez pas à nous contacter si vous avez la moindre question.",
+    },
+    {
+        title: "Sécurité",
+        content:
+            "  La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que pour les voyageurs, chaque logement correspond aux critères de sécurité établis par nos services. En laissant une note aussi bien à l'hôte qu'au locataire, cela permet à nos équipes de vérifier que les standards sont bien respectés. Nous organisons également des ateliers sur la sécurité domestique pour nos hôtes.",
+    },
+]
 
 export default function AboutDetails() {
-    const [seeFiability, setSeeFiability] = useState(false)
-    const [seeRespect, setSeeRespect] = useState(false)
-    const [seeService, setSeeService] = useState(false)
-    const [seeSecurity, setSeeSecurity] = useState(false)
+    const [activeIndex, setActiveIndex] = useState(null)
     return (
+        // container des collaps en page a propos.
         <Container>
-            <ToggleBar
-                onClick={() =>
-                    seeFiability
-                        ? setSeeFiability(false)
-                        : setSeeFiability(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Fiabilité</p>
-                {seeFiability ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <TextContainer style={seeFiability ? visible : hidden}>
-                Les annonces postées sur Kasa garantissent une fiabilité totale.
-                Les photos sont conformes aux logements, et toutes les
-                informations sont régulièrement vérifiées par nos équipes.
-            </TextContainer>
-            <ToggleBar
-                onClick={() =>
-                    seeRespect ? setSeeRespect(false) : setSeeRespect(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Respect</p>
-                {seeRespect ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <TextContainer style={seeRespect ? visible : hidden}>
-                La bienveillance fait partie des valeurs fondatrices de Kasa.
-                Tout comportement discriminatoire ou de perturbation du
-                voisinage entraînera une exclusion de notre plateforme.
-            </TextContainer>
-            <ToggleBar
-                onClick={() =>
-                    seeService ? setSeeService(false) : setSeeService(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Service</p>
-                {seeService ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <TextContainer style={seeService ? visible : hidden}>
-                Nos équipes se tiennent à votre disposition pour vous fournir
-                une expérience parfaite. N'hésitez pas à nous contacter si vous
-                avez la moindre question.
-            </TextContainer>
-            <ToggleBar
-                onClick={() =>
-                    seeSecurity ? setSeeSecurity(false) : setSeeSecurity(true)
-                }
-            >
-                <p style={{ paddingLeft: "20px" }}>Sécurité</p>
-                {seeSecurity ? (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronUp />
-                    </span>
-                ) : (
-                    <span style={{ paddingRight: "10px" }}>
-                        <FaChevronDown />
-                    </span>
-                )}
-            </ToggleBar>
-            <TextContainer style={seeSecurity ? visible : hidden}>
-                La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes
-                que pour les voyageurs, chaque logement correspond aux critères
-                de sécurité établis par nos services. En laissant une note aussi
-                bien à l'hôte qu'au locataire, cela permet à nos équipes de
-                vérifier que les standards sont bien respectés. Nous organisons
-                également des ateliers sur la sécurité domestique pour nos
-                hôtes.
-            </TextContainer>
+            {aboutContent.map((item, index) => (
+                <>
+                    <ToggleBar
+                        onClick={() =>
+                            setActiveIndex(activeIndex === index ? null : index)
+                        }
+                    >
+                        <p style={{ paddingLeft: "20px" }}>{item.title}</p>
+                        {activeIndex === index ? (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronUp />
+                            </span>
+                        ) : (
+                            <span style={{ paddingRight: "10px" }}>
+                                <FaChevronDown />
+                            </span>
+                        )}
+                    </ToggleBar>
+                    <TextContainer
+                        style={activeIndex === index ? visible : hidden}
+                    >
+                        {item.content}
+                    </TextContainer>
+                </>
+            ))}
         </Container>
     )
 }

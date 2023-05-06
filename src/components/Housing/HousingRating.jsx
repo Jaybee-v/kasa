@@ -12,6 +12,7 @@ export default function HousingRating({ rating }) {
     const stars = Array(5)
         .fill()
         .map((_, i) => i < filledStars)
+    // Affichage du nombre d'étoiles du logement
     return (
         <div>
             {stars.map((filled, i) => (

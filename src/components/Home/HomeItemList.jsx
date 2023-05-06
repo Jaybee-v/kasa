@@ -26,6 +26,7 @@ const Container = styled.section`
 
 export default function HomeItemList() {
     return (
+        // liste des logements pour l'affichage
         <Container>
             {housingList.map((item) => (
                 <HomeItem item={item} key={item.id} />

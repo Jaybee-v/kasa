@@ -8,5 +8,6 @@ const Container = styled.div`
 `
 
 export default function HousingDescription({ description }) {
+    // description du logement
     return <Container>{description}</Container>
 }

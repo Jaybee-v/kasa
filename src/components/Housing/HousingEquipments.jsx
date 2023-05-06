@@ -6,6 +6,7 @@ const Item = styled.li`
     color: #ff6060;
 `
 export default function HousingEquipments({ equipments }) {
+    // listing des equipements du logement
     return (
         <ul>
             {equipments.map((equipment) => (
